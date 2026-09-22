@@ -121,6 +121,7 @@ namespace Garvart
                 emptyHealth.Content = "Жизненные показатели: " + Enemy.Health;
                 emptyArmor.Content = "Броня: " + Enemy.Armor;
             }
+            //p
         }
 
         

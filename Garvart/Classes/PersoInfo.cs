@@ -17,7 +17,7 @@
             this.Level = Level;
             this.Glasses = Glasses;
             this.Money = Money;
-            this.Dmage = Dmage;
+            this.Dmage = Dmage; //p
         }
     }
     

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 
@@ -24,7 +25,7 @@ namespace Garvart
             Enemys.Add(new Classes.PersoInfo("Марионетка", 20, 5, 1, 5, 2, 5));
             Enemys.Add(new Classes.PersoInfo("Милый_дракон", 50, 3, 1, 10, 10, 15));
             dispatcherTimer.Tick += AtackPlayer; ;
-            dispatcherTimer.Interval = new System.TimeSpan(0, 0, 10);
+            dispatcherTimer.Interval = new System.TimeSpan(0, 0, 100);
             dispatcherTimer.Start();
             SelectEnemy();
         }
@@ -45,6 +46,25 @@ namespace Garvart
                 Enemys[Id].Glasses,
                 Enemys[Id].Money,
                 Enemys[Id].Damage);
+            string imagePath = "";
+            if (Enemy.Name == "Дракон1")
+
+            {
+                emptyHealth.Content += "Дракон1";
+                imagePath = "/image/photo_2026-09-22_12-49-02.jpg";
+            }
+            if (Enemy.Name == "Марионетка")
+            {
+                imagePath = "/Image/photo_2026-09-22_12-49-12.jpg";
+            }
+            if (Enemy.Name == "Милый_дракон")
+            {
+                imagePath = "/Image/photo_2026-09-22_12-48-55.jpg";
+            }
+            if (imagePath != "")
+            {
+                emptyImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+            }
         }
         public void UserInfoPlayer()
         {
@@ -62,14 +82,36 @@ namespace Garvart
             playerLevel.Content = "Уровень: " + Player.Level;
             playerGlasses.Content = "Опыт: " + Player.Glasses;
             playerMoney.Content = "Монеты: " + Player.Money;
+
+            if (Player.Health <= 0)
+            {
+                MessageBox.Show("GameOver");
+                Application.Current.Shutdown();
+                return;
+            }
+            
         }
 
         private void AttackEnemy(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Enemy.Health -= Convert.ToInt32(Player.Damage * 100f / (100f - Enemy.Armor));
+
+            Random rnd = new Random();
+            int proverka = rnd.Next(1, 101);
+           
+            if (proverka <= 20)
+            {
+                vivid.Content = $" Контр атака {proverka} урона нанесено ";
+                Player.Health -= proverka;
+                playerHealth.Content = "Жизненные показатели: " + Player.Health;
+            }
+            
             if (Enemy.Health <=0)
             {
-                Player.Glasses += Enemy.Glasses;
+                int bonus = rnd.Next(0, 31);
+                
+                Player.Glasses += Enemy.Glasses * Enemy.Glasses * bonus / 100;
+                
                 Player.Money += Enemy.Money;
                 UserInfoPlayer();
                 SelectEnemy();
@@ -80,5 +122,7 @@ namespace Garvart
                 emptyArmor.Content = "Броня: " + Enemy.Armor;
             }
         }
+
+        
     }
 }

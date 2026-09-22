@@ -21,8 +21,9 @@
 
             <Grid>
                 <Image
-                    Margin="10,10,10.2,185.4"
-                    Source="Image/knight.png"/>
+                    Margin="10,10,10.2,185.4" 
+                    Source="/Image/photo_2026-09-22_13-06-07.jpg"
+                    />
 
                 <Label
                     Content="Основные характеристики персонажа:"
@@ -32,12 +33,14 @@
                     Margin="10, 0, 0, 160"/>
 
                 <Label
+                    x:Name="playerHealth"
                     Content="Жизненные показатели: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="10, 0, 0, 130"/>
 
                 <Label
+                    x:Name="playerAmor"
                     Content="Броня: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
@@ -45,11 +48,13 @@
 
                 <Label
                     Content="Уровень: 1"
+                    x:Name="playerLevel"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="10, 0, 0, 70"/>
 
                 <Label
+                    x:Name="playerMoney"
                     Content="Опыт: 0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
@@ -72,8 +77,11 @@
         
             <Grid>
                 <Image
-                    Margin="10,10,10.2,185.4"
-                    Source=""/>
+                    x:Name="emptyImage"
+                    Margin="10,10,10.2,185.4" 
+                    Source="/Image/photo_2026-09-22_12-48-55.jpg"
+                    />
+
                 <Label
                     Content="Основные характеристики персонажа:"
                     HorizontalAlignment="Left"
@@ -81,11 +89,13 @@
                     FontWeight="Bold"
                     Margin="10, 0, 0, 160"/>
                 <Label
+                    x:Name="emptyHealth"
                     Content="Жизненные показатели: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="10, 0, 0, 130"/>
                 <Label
+                    x:Name="emptyAmor"
                     Content="Броня: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"

@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\PersoInfo.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,12 +95,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\photo_2026-09-22_13-06-07.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\photo_2026-09-22_12-48-55.jpg" />
     <Resource Include="Image\photo_2026-09-22_12-49-02.jpg" />
     <Resource Include="Image\photo_2026-09-22_12-49-07.jpg" />
     <Resource Include="Image\photo_2026-09-22_12-49-12.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

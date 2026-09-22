@@ -1,4 +1,5 @@
 ﻿using Garvart.Classes;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
@@ -14,6 +15,7 @@ namespace Garvart
         public Classes.PersoInfo Player = new Classes.PersoInfo("Student", 100,10, 1, 0, 0, 5 );
         public List<Classes.PersoInfo> Enemys = new List<Classes.PersoInfo>();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        public Classes.PersoInfo Enemy;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,13 +26,26 @@ namespace Garvart
             dispatcherTimer.Tick += AtackPlayer; ;
             dispatcherTimer.Interval = new System.TimeSpan(0, 0, 10);
             dispatcherTimer.Start();
+            SelectEnemy();
         }
 
         private void AtackPlayer(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
+            Enemy.Health -= Convert.ToInt32(Player.Damage * 100f / (100f - Enemy.Armor));
+            UserInfoPlayer();
         }
-
+        public void SelectEnemy()
+        {
+            int Id = new Random().Next(0, Enemys.Count);
+            Enemy = new Classes.PersoInfo(
+                Enemys[Id].Name,
+                Enemys[Id].Health,
+                Enemys[Id].Armor,
+                Enemys[Id].Level,
+                Enemys[Id].Glasses,
+                Enemys[Id].Money,
+                Enemys[Id].Damage);
+        }
         public void UserInfoPlayer()
         {
             if (Player.Glasses > 100 * Player.Level)

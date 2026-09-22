@@ -8,8 +8,8 @@
         public int Level { get; set; }
         public int Glasses { get; set; }
         public int Money { get; set; }
-        public float Dmage {  get; set; }
-        public PersoInfo(string Name, int Health, int Armor, int Level, int Glasses, int Money, float Dmage)
+        public float Damage {  get; set; }
+        public PersoInfo(string Name, int Health, int Armor, int Level, int Glasses, int Money, float Damage)
         {
             this.Name = Name;
             this.Health = Health;
@@ -17,7 +17,7 @@
             this.Level = Level;
             this.Glasses = Glasses;
             this.Money = Money;
-            this.Dmage = Dmage; //p
+            this.Damage = Damage; //p
         }
     }
     

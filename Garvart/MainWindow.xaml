@@ -40,7 +40,7 @@
                     Margin="10, 0, 0, 130"/>
 
                 <Label
-                    x:Name="playerAmor"
+                    x:Name="playerArmor"
                     Content="Броня: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
@@ -54,13 +54,14 @@
                     Margin="10, 0, 0, 70"/>
 
                 <Label
-                    x:Name="playerMoney"
+                    x:Name="playerGlasses"
                     Content="Опыт: 0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="10, 0, 0, 40"/>
 
                 <Label
+                    x:Name="playerMoney"
                     Content="Монеты: 0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
@@ -95,7 +96,7 @@
                     VerticalAlignment="Bottom"
                     Margin="10, 0, 0, 130"/>
                 <Label
-                    x:Name="emptyAmor"
+                    x:Name="emptyArmor"
                     Content="Броня: 100"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
